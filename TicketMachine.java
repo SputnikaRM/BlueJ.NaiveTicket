@@ -9,7 +9,7 @@
  * @author David J. Barnes and Michael Kolling
  * @version 2008.03.30
  */
-public class TicketMachine
+ public class  TicketMachine
 {
     // The price of a ticket from this machine.
     private int price;
@@ -23,9 +23,9 @@ public class TicketMachine
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(int ticketCost)
+    public TicketMachine()
     {
-        price = ticketCost;
+        price = 1000;
         balance = 0;
         total = 0;
     }
@@ -54,6 +54,18 @@ public class TicketMachine
     {
         balance = balance + amount;
     }
+    
+    public void prompt ()
+    {
+        System.out.println("Please insert the correct amount of money");
+    
+    }
+    
+    public void showPrice()
+    {
+    System.out.println("The price of a ticket is "+price +" cents.");
+    }
+    
 
     /**
      * Print a ticket.
@@ -74,5 +86,10 @@ public class TicketMachine
         total = total + balance;
         // Clear the balance.
         balance = 0;
+    }
+    
+    public void empty ()
+    {
+    total = 0;
     }
 }
